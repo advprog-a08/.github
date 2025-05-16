@@ -7,7 +7,7 @@
 5. 2306207480	Muhammad Rafli Esa Pradana ([@rafliesa](https://github.com/rafliesa))
 
 # Group Software Architecture Assignment
-## Current Architecture of the Application (C4 Diagram)
+## Current Architecture of the Application (C4 Diagram) - Deliverables G.1
 ### Context Diagram
 ![image](https://github.com/user-attachments/assets/2d647249-7521-4e3d-9eb5-c52396ad708b)
 
@@ -17,3 +17,10 @@
 
 ### Deployment Diagram
 ![image](https://github.com/user-attachments/assets/d9870a62-fd1e-4b97-a091-6b6872dddf44)
+
+## Future Architecture - Deliverables G.2
+### Kafka Container Diagram
+![image](https://github.com/user-attachments/assets/027ee064-14ce-4e5e-99a2-99a53acc1d70)
+
+### Kafka Deployment Diagram
+![image](https://github.com/user-attachments/assets/2467e9a0-8c66-4c82-b626-5385b4734bff)
