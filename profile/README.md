@@ -24,3 +24,28 @@
 
 ### Kafka Deployment Diagram
 ![image](https://github.com/user-attachments/assets/2467e9a0-8c66-4c82-b626-5385b4734bff)
+
+## Risk Mitigation - Deliverables G.3
+### Why the risk storming technique is applied?
+Kami menerapkan teknik Risk Storming untuk mengidentifikasi, memprioritaskan, dan mengurangi risiko dalam sistem pemesanan makanan berbasis microservice. Dengan arsitektur yang terdistribusi (database terpisah, komunikasi antar layanan, dan eksposur API), Risk Storming membantu tim secara kolaboratif menemukan risiko teknis dan operasional sejak awal. 
+
+### Risk Matrix
+![image](https://github.com/user-attachments/assets/9d2f21e7-da32-4e73-82ff-7a3687e9dd99)
+
+### Current Deployment Risk Diagram
+![WhatsApp Image 2025-05-16 at 7 55 04 PM](https://github.com/user-attachments/assets/979488da-2a15-4b67-bc9a-394f3086f6d1)
+
+### Consensus
+1. Lima partisipan mendapati bahwa inkonsistensi database antar microservice merupakan resiko yang cukup tinggi, karena dapat menyebabkan alur data tidak dapat ditrack. Resiko ini sendiri dapat terjadi secara berkala (6).
+2. Lima partisipan mendapati bahwa koneksi yang lambat antar service juga dapat menjadi resiko, namun memiliki dampak yang tidak terlalu serius. Selain itu, resiko hanya akan terjadi ketika user menjadi banyak secara tiba-tiba (4).
+3. Lima partisipan mendapati bahwa service yang tidak mendapatkan autentikasi dapat menjadi resiko, yang dimana resiko memiliki dampak yang cukup tinggi, karena dapat menyebabkan perubahan data secara ilegal oleh pihak yang tidak bertanggung jawab. Namun, resiko ini cenderung jarang untuk terjadi dengan adanya service auth yang digunakan pada sistem (3).
+
+### Mitigations
+1. **Inconsistent Database**
+*Mitigasi:* Mengembangkan arsitektur ke depan dengan menerapkan event-based synchronization menggunakan Kafka untuk menjaga konsistensi antar layanan.
+
+2. **Exposed Service Without Authentication**
+*Mitigasi:* Memasang API Gateway dan menerapkan autentikasi berbasis JWT untuk memastikan hanya pengguna terverifikasi yang dapat mengakses layanan.
+
+3. **Lambatnya Koneksi Antar Microservice**
+*Mitigasi:* Mengoptimalkan jaringan menggunakan service mesh (seperti Istio atau Linkerd) untuk meningkatkan performa dan observabilitas antar layanan.
